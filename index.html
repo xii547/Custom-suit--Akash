@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Nortsmen</title>
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+  <link href="assets/css/animate.css" rel="stylesheet" />
+  <link href="assets/css/main.css" rel="stylesheet" />
+  <link href="assets/css/modalstyle.css" rel="stylesheet" />
+  <link href="assets/css/responsive.css" rel="stylesheet" />
+</head>
+
+<body onload="check()">
+  <div class="customization-section">
+    <div class="progressbar-reports">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-11 offset-lg-1">
+            <div class="progress-reports-bar">
+              <ul>
+                <li class="progressType1 progressTypeactive" data="0">
+                  <a href="#">
+                    <span class="bar1 bar-check active"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Fit</span>
+                  </a>
+                </li>
+                <li class="progressType2 progressType" data="1">
+                  <a href="#"><span class="bar2 bar-check"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Collar</span></a>
+                </li>
+                <li class="progressType3 progressType" data="2">
+                  <a href="#"><span class="bar3 bar-check"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Chest Pocket</span></a>
+                </li>
+                <li class="progressType4 progressType" data="3">
+                  <a href="#"><span class="bar4 bar-check"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Placket</span></a>
+                </li>
+                <li class="progressType5 progressType" data="4">
+                  <a href="#"><span class="bar5 bar-check"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Back Pleat</span></a>
+                </li>
+                <li class="progressType6 progressType" data="5">
+                  <a href="#"><span class="bar6 bar-check"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Bottom Style</span></a>
+                </li>
+                <li class="progressType7 progressType" data="6">
+                  <a href="#"><span class="bar7 bar-check"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Sleeve</span></a>
+                </li>
+                <li class="progressType8 progressType" data="7">
+                  <a href="#"><span class="bar8 bar-check"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Cuff</span></a>
+                </li>
+                <li class="progressType9 progressType" data="8">
+                  <a href="#"><span class="bar9 bar-check"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span>Final Selection</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="app">
+    <div class="customization-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 offset-lg-1">
+            <div class="title-content">
+              <h1>Select Your Pant Style</h1>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <!-- current selected design details -->
+
+            <button type="button" class="btn btn-primary customModal" data-toggle="modal" data-target="#Mymodal"
+              @click="modalFunction()">
+              Your Current Customization
+            </button>
+            <a class="selectionSite" href="index.html">Change Product</a>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Your Customization
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <h2>Your Customization</h2>
+                      <table class="table table-condensed">
+                        <thead>
+                          <tr>
+                            <th>Type</th>
+                            <th>Selection</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Fit</td>
+                            <td>{{ fitPicked }}</td>
+                          </tr>
+                          <tr>
+                            <td>Collar</td>
+                            <td>{{ collarPicked }}</td>
+                          </tr>
+                          <tr>
+                            <td>Custom Collar Style</td>
+                            <td>{{ customcollarPicked }}</td>
+                          </tr>
+                          <tr>
+                            <td>Chest Pocket</td>
+                            <td>{{ chestpocketPicked }}</td>
+                          </tr>
+                          <tr>
+                            <td>Placket</td>
+                            <td>{{ placketPicked }}</td>
+                          </tr>
+                          <tr>
+                            <td>Back Pleat</td>
+                            <td>{{ backpleatPicked }}</td>
+                          </tr>
+                          <tr>
+                            <td>Tucking</td>
+                            <td>{{ tuckPicked }}</td>
+                          </tr>
+                          <tr>
+                            <td>Sleeves</td>
+                            <td>{{ sleevePicked }}</td>
+                          </tr>
+                          <tr>
+                            <td>Elbow Patch</td>
+                            <td>{{ elbowpatchPicked }}</td>
+                          </tr>
+                          <tr class="cuffstyle">
+                            <td>Cuff</td>
+                            <td>{{ cuffPicked }}</td>
+                          </tr>
+                          <tr class="cuffstyle">
+                            <td>Custom Cuff Style</td>
+                            <td>{{ customcuffPicked }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                      Close
+                    </button>
+                    <button onclick="location.href = 'https://northsmen.com/checkout#/';" type="button"
+                      class="btn btn-primary">
+                      Proceed to Checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 offset-lg-1">
+            <div class="customization-slide owl-carousel owlCarousel" id="myCarousel">
+              <div class="customization-content" id="shirtMfit">
+                <div class="ctitle"><strong>Fit</strong></div>
+                <hr />
+                <div class="customization-box  clearfix">
+                  <label class="single-item-box" v-for="variant in fitvariants" :key="variant.variantId">
+                    <div class="box" id="jfit" @click="updateProductFit(variant.variantImage) ">
+                      <input type="radio" name="fit" :id="variant.variantId" class="FTvariant"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="customization-content" id="shirtMcollar">
+                <div class="ctitle"><strong>Collars</strong></div>
+                <hr />
+                <div class="customization-box clearfix">
+                  <label class="single-item-box" v-for="variant in collarvariants" :key="variant.variantId">
+
+                    <div class="box" id="jcollar"
+                      @click="updateProductCollar(variant.variantImage,variant.variantImageCB,variant.variantImageCBH, variant.variantImageCBT);">
+                      <input type="radio" name="collar" :id="variant.variantId" class="CLvariant"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </label>
+                  <div class="clearfix"></div>
+                  <hr>
+                  <div class="ctitle clearfix"><strong>Custom Collars</strong></div>
+                  <label class="single-item-box d-block" v-for="variant in customcollarvariants"
+                    :key="variant.variantId">
+                    <div class="box" id="jcustomcollar"
+                      @click="updateProductCustomCollar(variant.variantImage); updateProductCustomCollarB(variant.variantImageCB); updateProductCustomCollarBT(variant.variantImageCBT); updateProductCustomCollarBH(variant.variantImageCBH)">
+                      <input type="radio" name="customcollar" :id="variant.variantId" class="CCLvariants"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" class="img-thumbnail" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+
+
+              </div>
+
+              <div class="customization-content" id="shirtMchestpocket">
+                <div class="ctitle"><strong>Chest Pocket</strong></div>
+                <hr />
+                <div class="customization-box clearfix">
+                  <label class="single-item-box" v-for="variant in chestpocketvariants" :key="variant.variantId">
+                    <div class="box" id="jpocket"
+                      @click="updateProductPocket(variant.variantImage); updateProductPocketB(variant.variantImageB); updateProductPocketBT(variant.variantImageBT)">
+                      <input type="radio" name="chestpocket" :id="variant.variantId" class="CPvariant"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="customization-content" id="shirtMplacket">
+                <div class="ctitle"><strong>Placket</strong></div>
+                <hr />
+                <div class="customization-box clearfix">
+                  <label class="single-item-box" v-for="variant in placketvariants" :key="variant.variantId">
+                    <div class="box" id="jplacket" @click="updateProductPlacket(variant.variantImage) ">
+                      <input type="radio" name="placket" :id="variant.variantId" class="PKvariants"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="customization-content" id="shirtMbackpleat">
+                <div class="ctitle"><strong>Back Pleat</strong></div>
+                <hr />
+                <div class="customization-box clearfix">
+                  <label class="single-item-box" v-for="variant in backpleatvariants" :key="variant.variantId">
+                    <div class="box" id="jbackpleat" @click="updateProductBackPleat(variant.variantImage) ">
+                      <input type="radio" name="backpleat" :id="variant.variantId" class="BPTvariants"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="customization-content" id="shirtMtuck">
+                <div class="ctitle"><strong>Bottom Style</strong></div>
+                <hr />
+                <div class="customization-box clearfix">
+                  <label class="single-item-box" v-for="variant in tuckvariants" :key="variant.variantId">
+                    <div class="box" id="jtuck"
+                      @click="updateProductTuck(variant.variantImage ,variant.variantImageBB, variant.variantImageP, variant.variantImageBBT, variant.variantImageBBH)">
+                      <input type="radio" name="tuck" class="TCvariant" :id="variant.variantId"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="customization-content" id="shirtMsleeve">
+                <div class="ctitle"><strong>Sleeves</strong></div>
+                <hr />
+                <div class="customization-box clearfix">
+                  <label class="single-item-box" v-for="variant in sleevevariants" :key="variant.variantId">
+                    <div class="box" id="jsleeve" @click="updateProductSleeve(variant.variantImage) ">
+                      <input type="radio" name="sleeve" class="SVvariants" :id="variant.variantId"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <div class="clearfix"></div>
+                  <hr>
+
+                  <div id='elbowPatch'>
+                    <div class="ctitle"><strong>Elbow Patch</strong></div>
+                    <label class="single-item-box" v-for="variant in elbowpatchvariants" :key="variant.variantId">
+                      <div class="box" id="jelbowpatch" @click="updateProductElbowPatch(variant.variantImage)">
+                        <input type="radio" name="elbowpatch" class="EPvariants" :id="variant.variantId"
+                          :value="variant.variantType" />
+                        <div class="box1">
+                          <div class="single-item-img">
+                            <img :src="variant.variantImageL" alt="One Button">
+
+                          </div>
+                          <div class="single-content">
+                            <p class="op-title">{{variant.variantType}}</p>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </label>
+                  </div>
+
+
+
+                </div>
+
+              </div>
+
+              <div class="customization-content" id="shirtMcuff">
+                <div class="ctitle"><strong>Cuffs</strong></div>
+                <hr />
+                <div class="customization-box clearfix">
+                  <!-- <label class="single-item-box" v-for="variant in cuffvariants" :key="variant.variantId"v-if="sideviewforcuff===true &&(variant.variantId==='cf2'||variant.variantId==='cf4'||variant.variantId==='cf8') " >
+                    <div class="box" id="jcuff" @click="updateProductCuff(variant.variantImage) "  >
+                      <input type="radio" name="cuff" :id="variant.variantId" class="CFvariants"
+                        :value="variant.variantType" />
+
+                      <div class="box1" >
+                        <div class="single-item-img"  >
+                          <img :src="variant.variantImageL" alt="One Button" />
+                         
+                        </div>
+                        <div>
+                          <p  class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                
+                  </label> -->
+                  <label class="single-item-box cuff_multiple" v-for="variant in cuffvariants" :key="variant.variantId">
+                    <div class="box" id="jcuff" @click="updateProductCuff(variant.variantImage) ">
+                      <input type="radio" name="cuff" :id="variant.variantId" class="CFvariants"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+
+                        </div>
+                        <div>
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </label>
+                  <div class="clearfix"></div>
+                  <hr>
+                  <div class="custom_cuff">
+                    <div class="ctitle"><strong>Custom Cuff</strong></div>
+
+                    <label class="single-item-box" v-for="variant in customcuffvariants" :key="variant.variantId">
+                      <div class="box" id="jcustomcuff" @click="updateProductCustomCuff(variant.variantImage) ">
+                        <input type="radio" name="customcuff" :id="variant.variantId" class="CCFvariants"
+                          :value="variant.variantType" />
+
+                        <div class="box1">
+                          <div class="single-item-img">
+                            <img :src="variant.variantImageL" alt="One Button" />
+                          </div>
+                          <div class="single-content">
+                            <p class="op-title">{{ variant.variantType }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+
+
+
+                </div>
+
+
+
+                <!-- <div class="customization-box clearfix">
+                  <label class="single-item-box" v-for="variant in customcuffvariants" :key="variant.variantId">
+                    <div class="box" id="jcustomcuff" @click="updateProductCustomCuff(variant.variantImage) ">
+                      <input type="radio" name="customcuff" :id="variant.variantId" class="CCFvariants"
+                        :value="variant.variantType" />
+
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img :src="variant.variantImageL" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ variant.variantType }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div> -->
+              </div>
+
+              <!-- end customization content div-->
+
+              <!--  customization end  -->
+
+              <div class="customization-content">
+                <div class="ctitle"><strong>Your Selection</strong></div>
+                <hr />
+                <div class="customization-box clearfix">
+                  <label class="single-item-box finalSelection">
+                    <div class="box" id="fitFinal" data="0">
+                      <input type="radio" name="updateF" id="fitF" class="updateF" :value="fitPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ `${fitPicked}` }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="single-item-box finalSelection">
+                    <div class="box" id="collarFinal" data="1">
+                      <input type="radio" name="updateF" id="collarF" class="updateF" :value="collarPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ collarPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="single-item-box finalSelection">
+                    <div class="box" id="customcollarFinal" data="2">
+                      <input type="radio" name="updateF" id="customcollarF" class="updateF"
+                        :value="customcollarPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ customcollarPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="single-item-box finalSelection" data="3">
+                    <div class="box" id="chestpocketFinal">
+                      <input type="radio" name="updateF" id="chestpocketF" class="updateF" :value="chestpocketPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ chestpocketPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="single-item-box finalSelection" data="4">
+                    <div class="box" id="placketFinal">
+                      <input type="radio" name="updateF" id="placketF" class="updateF" :value="placketPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ placketPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="single-item-box finalSelection" data="5">
+                    <div class="box" id="backpleatFinal">
+                      <input type="radio" name="updateF" id="backpleatF" class="updateF" :value="backpleatPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ backpleatPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="single-item-box finalSelection" data="6">
+                    <div class="box" id="tuckFinal">
+                      <input type="radio" name="updateF" id="tuckF" class="updateF" :value="tuckPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ tuckPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="single-item-box finalSelection" data="7">
+                    <div class="box" id="sleeveFinal">
+                      <input type="radio" name="updateF" id="sleeveF" class="updateF" :value="sleevePicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ sleevePicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="single-item-box finalSelection" data="8">
+                    <div class="box" id="elbowpatchFinal">
+                      <input type="radio" name="updateF" id="elbowpatchF" class="updateF" :value="elbowpatchPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ elbowpatchPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="single-item-box finalSelection" data="9">
+                    <div class="box" id="cuffFinal">
+                      <input type="radio" name="updateF" id="cuffF" class="updateF" :value="cuffPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ cuffPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="single-item-box finalSelection" data="10">
+                    <div class="box" id="customcuffFinal">
+                      <input type="radio" name="updateF" id="customcuffF" class="updateF" :value="customcuffPicked" />
+                      <div class="box1">
+                        <div class="single-item-img">
+                          <img src="./assets/img/line-arts/04.jpg" alt="One Button" />
+                        </div>
+                        <div class="single-content">
+                          <p class="op-title">{{ customcuffPicked }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- carousel end -->
+
+            <button class="owlPrev owlBtn btn btn-primary" id="owlPrev" @click="updateProduct() ">
+              Prev
+            </button>
+            <button class="owlNext owlBtn btn btn-primary" id="owlNext" @click="updateProduct() ">
+              Next
+            </button>
+            <button type="submit " class="owlSubmit owlBtn btn btn-primary" id="owlSubmit">
+              Finalize Your Customization
+            </button>
+            <button class="owlUpdate owlBtn btn btn-primary" id="owlUpdate">
+              Update
+            </button>
+            <button class="updateC owlBtn btn btn-primary" id="updateC">
+              Update
+            </button>
+
+
+
+
+            <!-- PROGRESS BAR (experimental) -->
+
+            <!--                     <div class="row">
+                        
+                        <div class="progress" style="width: 100%">
+                             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 14.28%;">
+                             </div>
+                        </div>
+
+                    </div> -->
+          </div>
+          <div class="col-lg-5">
+            <div class="ct-preview-box clearfix">
+              <div class="single-preview-img">
+                <!-- preview image parts -->
+
+                <div id="frontImg" class="activeC frontCarousel cDisplay">
+                  <div class="modelFront">
+                    <img class="modelHead modelImg" :src="modelhead" />
+                    <img class="modelImg" id="tuck" :src="shirtfit" />
+                    <img class="modelImg" id="untuck" :src="shirtfullfit" />
+                    <img class="modelPant modelImg" :src="modelpant" />
+                    <!-- <img class="modelShoe modelImg" src="imge/front/zapatos.png"> -->
+                  </div>
+                  <div class="collar">
+
+                    <img class="modelImg" id="collar" :src="collar" />
+                    <img class="modelImg" id="customcollar" :src="customcollar" />
+                    <img class="modelImg" :src="collarbutton" />
+                    <img class="modelImg" :src="collarbuttonhole" />
+                    <img class="modelImg" :src="collarbuttonthread" />
+
+                  </div>
+
+                  <div class="cuff">
+                    <img class="modelImg" id="defaultcuff" :src="cuff" />
+                    <img class="modelImg" id="customcuff" :src="ffcuff" />
+                  </div>
+
+                  <div class="sleeve">
+                    <img class="modelImg" class="modelImg" :src="sleeve" />
+                  </div>
+
+                  <div class="tuck" id="tuck">
+                    <img class="modelImg" :src="tuck" />
+                  </div>
+
+                  <div class="placket">
+                    <img class="modelImg" id="tuck" :src="placket" />
+                    <img class="modelImg" id="untuck" :src="ffplacket" />
+                  </div>
+                  <div class="shirtbuttonhole">
+                    <img class="modelImg" id="tuck" :src="shirtbuttonhole" />
+                    <img class="modelImg" id="untuck" :src="ffshirtbuttonhole" />
+                  </div>
+                  <div class="shirtbutton">
+                    <img class="modelImg" id="tuck" :src="shirtbutton" />
+                    <img class="modelImg" id="untuck" :src="ffshirtbutton" />
+                  </div>
+                  <div class="shirtbuttonthread">
+                    <img class="modelImg" id="tuck" :src="shirtbuttonthread" />
+                    <img class="modelImg" id="untuck" :src="ffshirtbuttonthread" />
+                  </div>
+
+                  <div class="chestpocket">
+                    <img class="modelImg" :src="chestpocket" />
+                    <img class="modelImg" :src="chestpocketbutton" />
+                    <img class="modelImg" :src="chestpocketbuttonthread" />
+                  </div>
+                </div>
+
+                <div class="backCarousel cDisplay" id="backImg">
+                  <div class="modelFront">
+                    <img class="modelHead modelImg" :src="modelBhead" />
+                    <img class="modelImg" id="tuck" :src="shirtBfit" />
+                    <img class="modelImg" id="untuck" :src="shirtBfullfit" />
+                    <img class="modelBPant modelImg" :src="modelBpant" />
+                  </div>
+                  <div class="bcollar">
+                    <img class="modelImg" :src="bcollar" />
+                  </div>
+                  <div class="backpleat">
+                    <img class="modelImg" :src="backpleat" />
+                  </div>
+                  <div class="bcuffs">
+                    <img class="modelImg" id="defaultcuff" :src="bcuff" />
+                    <img class="modelImg" id="customcuff" :src="ffcuffb" />
+
+                  </div>
+                  <div class="sleeve">
+                    <img class="modelImg" class="modelImg" :src="bsleeve" />
+                    <img class="modelImg " :src="elbowpatch" />
+                  </div>
+
+
+                </div>
+                <div class="sideCarousel cDisplay" id="sideImg">
+                  <div class="modelSide">
+                    <img class="modelHead modelImg" :src="modelShead" />
+                    <img class="modelImg" class="tuck" :src="shirtSfit" />
+                    <img class="modelImg" class="untuck" :src="shirtSfullfit" />
+                    <img class="modelSPant modelImg" :src="modelSpant" />
+                  </div>
+                  <div class="collar">
+                    <img class="modelImg modelscollar" id="collars" :src="collars" />
+                    <img class="modelImg " id="customScollar" :src="customScollar" />
+                    <img class="modelImg collarsbutton collarsbuttonwing" :src="collarSbutton" />
+                    <img class="modelImg collarsbutton" :src="collarSbuttonhole" />
+                    <img class="modelImg collarsbutton" :src="collarSbuttonthread" />
+                  </div>
+                  <div class="cuff">
+                    <img class="modelImg" id="defaultcuff" :src="cuffs" />
+                    <img class="modelImg" id="customcuff" :src="ffcuffs" />
+
+                  </div>
+                  <div class="sleeve">
+                    <img class="modelImg" class="modelImg" :src="S_sleeve" />
+                  </div>
+                  <div class="placket">
+                    <img class="modelImg" id="tuck" :src="S_placket" />
+                    <img class="modelImg" id="untuck" :src="S_ffplacket" />
+
+                  </div>
+                  <div class="shirtbuttonhole">
+                    <img class="modelImg" id="tuck" :src="shirtSbuttonhole" />
+                    <img class="modelImg" id="untuck" :src="ffshirtSbuttonhole" />
+                  </div>
+                  <div class="shirtbutton">
+                    <img class="modelImg" id="tuck" :src="shirtSbutton" />
+                    <img class="modelImg" id="untuck" :src="ffshirtSbutton" />
+                  </div>
+
+                  <div class="shirtbuttonthread">
+                    <img class="modelImg" id="tuck" :src="shirtSbuttonthread" />
+                    <img class="modelImg" id="untuck" :src="ffshirtSbuttonthread" />
+                  </div>
+                  <div class="chestpocket">
+                    <img class="modelImg" :src="chestSpocket" />
+                    <img class="modelImg" :src="chestpocketSbutton" />
+                    <img class="modelImg" :src="chestpocketSbuttonthread" />
+                  </div>
+
+
+                </div>
+              </div>
+              <div class="ct-multi-img previewBox">
+                <label for="frontPreview" class="model-preview frontview ">
+                  <input type="radio" name="modelViewSelector" value="Front View" id="frontPreview" />
+                  <img src="./assets/img/customization/front-img.jpg" alt="multiple img" class="model-preview-img" />
+                  <p>Front Preview</p>
+                </label>
+
+                <label for="sidePreview" class="model-preview sideview">
+                  <input type="radio" name="modelViewSelector" value="Side View" id="sidePreview" />
+                  <img src="./assets/img/customization/back-img.jpg" alt="multiple img" class="model-preview-img" />
+                  <p>Side Preview</p>
+                </label>
+
+                <label for="backPreview" class="model-preview">
+                  <input type="radio" name="modelViewSelector" value="Back View" id="backPreview" />
+                  <img src="./assets/img/customization/back-img.jpg" alt="multiple img" class="model-preview-img" />
+                  <p>Back Preview</p>
+                </label>
+
+                <div class="model-preview " data-toggle="modal" data-target="#exampleModal">
+                  <img src="./assets/img/Fabric.jpg" alt="multiple img" class="Fabric-model-img" />
+
+                  <p>Fabric details</p>
+                </div>
+              </div>
+
+              <!-- fabric Modal -->
+
+              <div class="modal left fade bd-example-modal-lg modalpull" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Select Fabric
+                      </h5>
+                      <button type="button" class="close" id="modalclose1" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div style="text-align: center; padding-bottom: 20px">
+                        <button type="button" class="modalFilterbtn btn btn-secondary">
+                          filter
+                        </button>
+                      </div>
+                      <!-- <div class="containerModal"> -->
+                      <div class="modalmainContainer">
+                        <label class="filter new blue wool plain summer" @click="changeFabric()">
+                          <img src="assets/img/fabric-demo/1.jpg" />
+                          <input type="radio" name="checkColor" id="fabric1 shirtFabric" value="-102.png" checked />
+                          <p>Blue</p>
+                          <p>$200</p>
+                        </label>
+
+                        <label class="filter faves white wool plain summer" @click="changeFabric()">
+                          <img src="assets/img/fabric-demo/2.jpg" />
+                          <input type="radio" name="checkColor" id="fabric2 shirtFabric" value="-101.png" />
+                          <p>White</p>
+                          <p>$200</p>
+                        </label>
+
+                        <!-- END GRID -->
+                      </div>
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade left filterModal" id="mymodal2" data-backdrop="static">
+                <div class="modal-dialog" style="max-width: 500px">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">filter fabric</h4>
+                      <button type="button" class="close" id="modalclose2" data-dismiss="modal" aria-hidden="true">
+                        ×
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div style="text-align: center; padding-bottom: 20px">
+                        <button type="button" class="modalResetbtn btn btn-secondary" onclick="filterreset()">
+                          reset
+                        </button>
+                      </div>
+                      <div class="container">
+                        <h3>Type</h3>
+                        <div class="filter-options">
+                          <div>
+                            <input class="checkitem" type="checkbox" name="checkitem" value="new" id="new" /><label
+                              for="new">new</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="checkitem" value="faves" id="faves" /><label
+                              for="faves">faves</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="checkitem" value="basic" id="basic" /><label
+                              for="basic">basic</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="checkitem" value="limitedEdition"
+                              id="limitedEdition" /><label for="limitedEdition">limited edition</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="type" value="premium" id="premium" /><label
+                              for="premium">premium</label>
+                          </div>
+                        </div>
+
+                        <h3>Color</h3>
+                        <div class="filter-options">
+                          <!-- <div><input class="checkitem" type="radio" name="color" value="black" id="black"><label for="black">black</label></div> -->
+                          <div>
+                            <input class="checkitem" type="radio" name="checkitem" value="-101.png" id="blue " /><label
+                              for="blue">blue</label>
+                          </div>
+                          <!-- <div><input class="checkitem" type="radio" name="color" value="grey" id="grey"><label for="grey">grey</label></div>
+                                                  <div><input class="checkitem" type="radio" name="color" value="brown" id="brown"><label for="brown">brown</label></div> -->
+                          <div>
+                            <input class="checkitem" type="radio" name="checkitem" value="-102.png" id="white " /><label
+                              for="white">white</label>
+                          </div>
+                          <!-- <div><input class="checkitem" type="radio" name="color" value="beige" id="beige"><label for="beige">beige</label></div>
+                                                  <div><input class="checkitem" type="radio" name="color" value="yellow" id="yellow"><label for="yellow">yellow</label></div>
+                                                  <div><input class="checkitem" type="radio" name="color" value="pink" id="pink"><label for="pink">pink</label></div>
+                                                  <div><input class="checkitem" type="radio" name="color" value="green" id="green"><label for="green">green</label></div>
+                                                  <div><input class="checkitem" type="radio" name="color" value="red" id="red"><label for="red">red</label></div> -->
+                        </div>
+
+                        <h3>Material</h3>
+                        <div class="filter-options">
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="wool" id="wool" /><label
+                              for="wool">wool</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="linen" id="linen" /><label
+                              for="linen">linen</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="tweed" id="tweed" /><label
+                              for="tweed">tweed</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="cotton" id="cotton" /><label
+                              for="cotton">cotton</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="velvet" id="velvet" /><label
+                              for="velvet">velvet</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="corduroy"
+                              id="corduroy" /><label for="corduroy">corduroy</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="polyester"
+                              id="polyester" /><label for="polyester">polyester</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="seersucker"
+                              id="seersucker" /><label for="seersucker">seersucker</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="stretchy"
+                              id="stretchy" /><label for="stretchy">stretchy</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="material" value="wooldBlends"
+                              id="wooldBlends" /><label for="wooldBlends">woold blends</label>
+                          </div>
+                        </div>
+                        <h3>Pattern</h3>
+                        <div class="filter-options">
+                          <div>
+                            <input class="checkitem" type="checkbox" name="pattern" value="plain" id="plain" /><label
+                              for="plain">plainern</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="pattern" value="striped"
+                              id="striped" /><label for="striped">stripedern</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="pattern" value="checked"
+                              id="checked" /><label for="checked">checkedern</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="pattern" value="houndstooth"
+                              id="houndstooth" /><label for="houndstooth">houndstoothern</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="pattern" value="paisley"
+                              id="paisley" /><label for="paisley">paisleyern</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="pattern" value="herrington"
+                              id="herrington" /><label for="herrington">herringtonern</label>
+                          </div>
+                        </div>
+                        <h3>Season</h3>
+                        <div class="filter-options">
+                          <div>
+                            <input class="checkitem" type="checkbox" name="season" value="summer" id="summer" /><label
+                              for="summer">summer</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="season" value="yearRound"
+                              id="yearRound" /><label for="yearRound">year round</label>
+                          </div>
+                          <div>
+                            <input class="checkitem" type="checkbox" name="season" value="winter" id="winter" /><label
+                              for="winter">winter</label>
+                          </div>
+                        </div>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Esse neque dignissimos temporibus ratione
+                          necessitatibus soluta dicta nesciunt repellendus
+                          repudiandae ipsum saepe aliquam amet reprehenderit,
+                          quo sequi dolor maxime, voluptatibus suscipit.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a href="#" data-dismiss="modal" class="btn">Close</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--start Footer area -->
+  <div class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-4">
+              <h4>Customize</h4>
+              <ul>
+                <li><a href="#">Suits</a></li>
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Blazers</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4">
+              <h4>Information</h4>
+              <ul>
+                <li><a href="#">About Blueknot</a></li>
+                <li><a href="#">How it Works</a></li>
+                <li><a href="#">Why Custom</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4">
+              <h4>Help Center</h4>
+              <ul>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="#">Shipping/ Delivery</a></li>
+                <li><a href="#">Altertions/ Returns</a></li>
+                <li><a href="#">Gift Card</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h4>Join our mail list to receive $25 off your fist suits</h4>
+          <div class="email-subscription-form">
+            <form action="index.html">
+              <input type="email" placeholder="Email Address" />
+              <input type="submit" value="Sign Up" />
+            </form>
+          </div>
+
+          <h4>Follow us</h4>
+          <ul class="social-links">
+            <li>
+              <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-linkedin"></i> Linkdin</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-pinterest"></i> Pinterest</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          Copyright &copy; Designed by MakeHub, Developed by MakeHub 2019
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end Footer area -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/skrollr.min.js"></script>
+  <script src="assets/js/jquery.sticky.js"></script>
+  <script src="assets/js/vueAppShirt.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+  <script src="assets/js/modalfilter.js"></script>
+  <script src="assets/js/shirt.js"></script>
+  <!--    <script src="assets/js/perfect-scrollbar.min.js"></script>-->
+</body>
+
+</html>
